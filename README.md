@@ -22,7 +22,7 @@
 
 3. 分析文件并制作表格
 
-<img title="" src="file:///C:/Users/zzz4024/Desktop/RecToForm_SSPU_Web_ultimate/md_img/3.jpg" alt="" data-align="center" width="712">
+<img title="" src="md_img/3.jpg" alt="" data-align="center" width="712">
 
 4. 下载表格并查看
    
@@ -53,3 +53,13 @@
    （4）`shared`负责存取中间信息（任务队列、定时清理缓存文件程序）
 
 3. `requirements.txt`本项目所需全部环境（基于python 3.9）
+
+### II.前端`RecToForm_front`
+
+1. `images`图标文件夹
+
+2. `imgs`背景图文件夹
+
+3. `scripts`Js脚本文件，负责交互
+
+4. `styles`样式文件
