@@ -1,4 +1,5 @@
 import os
+import subprocess
 import shutil
 from datetime import datetime
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -29,6 +30,9 @@ def clean_upload_folders():
                     print(f"已删除文件夹：{item_path}")
             except Exception as e:
                 print(f"删除失败：{item_path}，错误：{e}")
+
+    #重启后端服务(依赖于pm2, 重启rec2form_back)
+    subprocess.call(["pm2", "restart", "rec2form_back"])
 
 def start_cleaner_scheduler():
     scheduler = AsyncIOScheduler(timezone=pytz.timezone('Asia/Shanghai'))  #上海时区
