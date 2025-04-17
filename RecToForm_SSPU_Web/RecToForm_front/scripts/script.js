@@ -226,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialMessages = [
         { text: "发票信息自助填表（提取发票代码、发票号、发票金额）", type: "warning" },
         { text: "作者：Yunxi_Zhu, Xinger", type: "warning" },
-        { text: "邮箱：20241130160@sspu.edu.cn ；20241113537@sspu.edu.cn", type: "warning" },
         { text: "请上传 PDF 或 OFD 文件以开始分析（可多选文件）", type: "warning" },
         { text: "------------------------------------------------------------------------------------", type: "divider" }
     ];

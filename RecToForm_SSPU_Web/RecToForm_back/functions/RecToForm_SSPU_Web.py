@@ -138,7 +138,6 @@ class RecToForm:
 
 def hint():
     print("作者：Yunxi_Zhu")
-    print("邮箱：20241130160@sspu.edu.cn")
     print("----------------发票信息自助填表---------------")
     print("在使用前, 请预先创建一个文件夹, 并在里边创建“发票”的文件夹(内含格式为pdf, ofd的发票文件)\n同时, 将本程序至于其同级目录下")
     flag = input("请确保你已完成上述操作[y/n]：")
