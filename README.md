@@ -52,14 +52,14 @@ cp .env.example .env
 
 这些字段用于异步任务队列与导出文件映射存储。
 
-| 字段 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| `REDIS_URL` | `string` | `redis://127.0.0.1:6379/0` | Redis 连接地址，后端 API 和 worker 都依赖它。 |
-| `EXPORT_FILE_MAPPING_TTL` | `int` | `86400` | 导出文件映射关系的过期时间，单位为秒。 |
-| `RQ_QUEUE_NAME` | `string` | `invoice_tasks` | RQ 队列名。注意当前根目录 `docker-compose.yml` 中 worker 命令固定监听 `invoice_tasks`，如果修改此值，还需要同步修改 compose 配置。 |
-| `RQ_JOB_TIMEOUT` | `int` | `1800` | 单个异步任务超时时间，单位为秒。 |
-| `RQ_RESULT_TTL` | `int` | `86400` | RQ 任务结果保留时间，单位为秒。 |
-| `RQ_WORKER_PROCESSES` | `int` | `4` | worker 并发进程数。 |
+| 字段 | 类型 | 默认值                    | 说明 |
+| --- | --- |------------------------| --- |
+| `REDIS_URL` | `string` | `redis://redis:6379/0` | Redis 连接地址，后端 API 和 worker 都依赖它。 |
+| `EXPORT_FILE_MAPPING_TTL` | `int` | `86400`                | 导出文件映射关系的过期时间，单位为秒。 |
+| `RQ_QUEUE_NAME` | `string` | `invoice_tasks`        | RQ 队列名。注意当前根目录 `docker-compose.yml` 中 worker 命令固定监听 `invoice_tasks`，如果修改此值，还需要同步修改 compose 配置。 |
+| `RQ_JOB_TIMEOUT` | `int` | `1800`                 | 单个异步任务超时时间，单位为秒。 |
+| `RQ_RESULT_TTL` | `int` | `86400`                | RQ 任务结果保留时间，单位为秒。 |
+| `RQ_WORKER_PROCESSES` | `int` | `4`                    | worker 并发进程数。 |
 
 ### 3. Workflow 执行限制
 
