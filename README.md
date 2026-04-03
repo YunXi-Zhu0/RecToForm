@@ -3,6 +3,9 @@
 2. 提供两种填写模式：全字段匹配填写和自定义模板填写。用户可在线编辑表格，调整表头和数据列，并支持下载编辑后的Excel文件
 3. 支持阿里云百炼官方接口、本地私有化模型部署，用户可根据需求选择不同的LLM提供商
 4. 后端采用FastAPI框架，前端使用React，部署方式支持Docker和本地环境配置
+5. 服务端与客户端仓库地址
+- 服务端: [RecToForm-backend](https://github.com/YunXi-Zhu0/RecToForm-backend.git)
+- 客户端: [RecToForm-frontend](https://github.com/YunXi-Zhu0/RecToForm-frontend.git)
 
 # 一、功能演示
 ## 1. 全字段匹配填写
