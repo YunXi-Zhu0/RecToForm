@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/YunXi-Zhu0/RecToForm-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/YunXi-Zhu0/RecToForm-frontend.git
