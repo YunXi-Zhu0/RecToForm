@@ -101,7 +101,30 @@ docker compose up --build
 ```
 tips: 若本地环境无`Docker`或者遇到网络问题导致所需镜像文件拉去失败, 可参考如下博客进行配置调整: [Docker安装及配置代理](https://yunxi-zhu.top/posts/linux/2026-04-01-docker%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86/)
 
-### 2. 本地环境启动
+### 2. Nginx 线上部署
+当前根目录 `docker-compose.yml` 已将前端构建为生产静态资源，并通过前端容器内的 nginx 对外提供服务：
+
+- 访问地址：`http://home.yunxi-zhu.top:46002`
+- 宿主机端口：`46002`
+- nginx 容器内端口：`80`
+- 后端 API：nginx 将 `/api/` 与 `/health` 反代到 `backend:8080`
+
+上线前请确认域名 `home.yunxi-zhu.top` 的 DNS 已解析到服务器公网 IP，并且服务器安全组/防火墙已放行 TCP `46002`。
+
+启动命令：
+
+```bash
+docker compose up --build -d
+```
+
+检查服务：
+
+```bash
+docker compose ps
+curl http://127.0.0.1:46002/health
+```
+
+### 3. 本地环境启动
 (1) 后端环境配置\
 可参考 [RecToForm-backend](https://github.com/YunXi-Zhu0/RecToForm-backend) 其中的`三、快速开始`部分\
 (2) 前端环境配置\
@@ -240,4 +263,3 @@ tips: 若本地环境无`Docker`或者遇到网络问题导致所需镜像文件
 - 每新增一个模板版本，都在 `templates` 中追加一项注册信息。
 - 同一组 `template_id + template_version` 应保持唯一，避免后端命中到错误配置。
 - `file` 对应的 JSON 文件中再通过 `excel_template_path` 关联实际 Excel 模板文件。
-

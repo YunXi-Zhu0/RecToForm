@@ -4,8 +4,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: rec2form-backend
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080"
     env_file:
       - .env
     volumes:
@@ -34,16 +34,18 @@ services:
     container_name: rec2form-redis
     restart: unless-stopped
 
-  fronted:
+  frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
       args:
         NPM_REGISTRY: ${NPM_REGISTRY:-https://registry.npmmirror.com/}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-/}
     container_name: rec2form-frontend
     ports:
-      - "5173:5173"
-    command: [ "npm", "run", "dev", "--", "--host", "0.0.0.0" ]
+      - "46002:80"
+    depends_on:
+      - backend
     restart: unless-stopped
 
 volumes:
